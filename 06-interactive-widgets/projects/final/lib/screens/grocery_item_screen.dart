@@ -49,7 +49,7 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
             onPressed: () {
               // 1
               final groceryItem = GroceryItem(
-                  id: widget.originalItem?.id ?? Uuid().v1(),
+                  id: widget.originalItem?.id ?? const Uuid().v1(),
                   name: _nameController.text,
                   importance: _importance,
                   color: _currentColor,
@@ -225,7 +225,7 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
               style: GoogleFonts.lato(fontSize: 28.0),
             ),
             // 5
-            FlatButton(
+            TextButton(
               child: const Text('Select'),
               // 6
               onPressed: () async {
@@ -268,7 +268,7 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
               'Time of Day',
               style: GoogleFonts.lato(fontSize: 28.0),
             ),
-            FlatButton(
+            TextButton(
               child: const Text('Select'),
               onPressed: () async {
                 // 1
@@ -307,7 +307,7 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
           ],
         ),
         // 3
-        FlatButton(
+        TextButton(
           child: const Text('Select'),
           onPressed: () {
             // 4
@@ -324,7 +324,7 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
                       }),
                   actions: [
                     // 7
-                    FlatButton(
+                    TextButton(
                       child: const Text('Save'),
                       onPressed: () {
                         Navigator.of(context).pop();
@@ -348,6 +348,7 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
         // 2
         Row(
           crossAxisAlignment: CrossAxisAlignment.baseline,
+          textBaseline: TextBaseline.alphabetic ,
           children: [
             Text(
               'Quantity',
